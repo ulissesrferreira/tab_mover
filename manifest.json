@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Mover",
+  "version": "1.0",
+  "description": "Move tab para outra janela com duplo middle click",
+  "permissions": ["tabs", "windows"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

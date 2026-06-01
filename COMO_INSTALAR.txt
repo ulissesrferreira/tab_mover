@@ -1,0 +1,28 @@
+============================================================
+  TAB MOVER — Extensão para Microsoft Edge
+  Ctrl + Middle Click → move a aba para a próxima janela
+============================================================
+
+COMO INSTALAR:
+--------------
+1. Abra o Microsoft Edge
+2. Na barra de endereços, acesse:  edge://extensions
+3. Ative o "Modo de desenvolvedor" (canto inferior esquerdo)
+4. Clique em "Carregar sem pacote" (Load unpacked)
+5. Selecione ESTA PASTA (tab edge)
+6. A extensão aparecerá na lista — pronto!
+
+COMO USAR:
+----------
+• Com duas ou mais janelas do Edge abertas:
+  → Ctrl + clique do botão do meio (scroll) em qualquer
+    lugar da página move a aba atual para a próxima janela.
+
+• Se não houver outra janela aberta, uma mensagem
+  aparece brevemente na página avisando.
+
+DESINSTALAR:
+------------
+• Em edge://extensions, clique em "Remover" na extensão.
+
+============================================================
