@@ -7,8 +7,13 @@ let pendingFirst = false;
 function handleMiddle(e) {
   if (e.button !== 1) return;
 
-  // Sempre previne o auto-scroll do Edge (que consumia o 2º clique)
-  e.preventDefault();
+  // Previne o auto-scroll apenas no mousedown (não no pointerdown).
+  // Chamar preventDefault no pointerdown impede o navegador de disparar os eventos
+  // mousedown subsequentes, o que causava conflito com outras extensões (como o Atomik)
+  // que dependem de ouvir o mousedown.
+  if (e.type === 'mousedown') {
+    e.preventDefault();
+  }
 
   // Deduplica pointerdown + mousedown do mesmo clique físico
   const now = Date.now();
@@ -18,6 +23,7 @@ function handleMiddle(e) {
   if (pendingFirst && (now - lastClickTime) < DOUBLE_CLICK_MS) {
     // Segundo clique — duplo middle click confirmado!
     pendingFirst = false;
+    e.preventDefault(); // Garante o preventDefault no pointerdown do segundo clique
     e.stopImmediatePropagation();
     sendMove(3);
   } else {
